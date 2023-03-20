@@ -1,0 +1,166 @@
+.telaFundo {
+    background-color: #3283a2;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+.header h1 {
+    font-size: 3em;
+    color: white;
+    font-weight: bold;
+    
+}
+
+.header {
+    
+    background-color: #286179;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header ul {
+    display: flex;
+    align-items: center;
+    font-size: 1.4em;
+    list-style-type: none;
+    
+}
+
+.header ul li {
+    margin: 40px
+}
+
+.header ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.header h1 a {
+    text-decoration: none;
+    color: white;
+}
+
+
+.page {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.page img {
+    margin: 0 0 0 10rem;
+}
+
+.page button {
+    margin-right: 10rem;
+    height: 80px;
+    width: 300px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: #c5a287;
+    border: none;
+    border-radius: 10px;
+    color: white;
+}
+
+.page button:hover {
+    background-color: tan;
+    cursor: pointer;
+}
+
+
+.logon{
+    margin: 20 auto;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.logon input {
+    display: block;
+    width: 25.5vw;
+    padding: 15px;
+    margin: 5vh 0;
+    border: none;
+    border-radius: 15px
+}
+
+.logon h1 {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+}
+
+.logon button {
+    
+    
+    height: 7vh;
+    width: 27.6vw;
+    font-size: 1.3rem;
+    color: white;
+    font-weight: bold;
+    background-color: #286179;
+    border: none;
+    border-radius: 15px;
+    
+}
+
+.logon button:hover{
+    background-color: rgb(54, 54, 161);
+}
+
+.logon p a {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+
+.logon p a:hover {
+    color: lightblue
+}
+
+
+.sobre {
+    text-align: center;
+    margin-left: 10rem;
+    margin-right: 10rem;
+}
+.sobre h1 {
+    font-size: 4rem;
+    color: white;
+    font-weight: bold;
+
+}
+
+.sobre p {
+    font-size: 1.6rem;
+    color: white;
+    font-weight: bold;
+}
+
+.fundo{
+    background-color: #286179;
+}
+
+.centralizar{
+    margin: 0 auto !important;
+    float: none !important;
+}
+
+.formulario {
+    font-size: 1.4rem;
+    color: white;
+    font-weight: bold;
+}
+
+
