@@ -6,15 +6,33 @@ if(isset($POST['email']) || isset($_POST['senha'])) {
     echo "Preencha seu e-mail";
   } else if(strlen($_POST['senha'] == 0)){
     echo "Preencha sua senha";
-  } else {
+  } 
 
     $email = $mysqli->real_escape_string($_POST['email']);
     $senha = $mysqli->real_escape_string($_POST['senha']);
-
-    $sql_code = "SELECT * FROM usuarios WHERE email = '$email' AND senha = '$senha'";
+    $hashSenhaInfo = hash('sha512', $senha);
+    $sql_code = "SELECT * FROM clientes WHERE email = '$email'";
     $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL: ". $mysqli->error);
+
     
-    $quantidade = $sql_query->num_rows;
+    if($sql_query) {
+      $registro = $sql_query->fetch_all(MYSQLI_ASSOC);
+      //echo var_dump($registro);
+      if ($registro[0]['senha'] == $hashSenhaInfo){
+
+  
+        echo"<script language='javascript' type='text/javascript'>alert('Você está logado');window.location.href='login.php';</script>";
+        die();
+
+      } else {
+        echo "Email ou senha incorreta";
+      }
+
+    }
+  
+  }
+
+/*     $quantidade = $sql_query->num_rows;
 
     if($quantidade == 1) {
 
@@ -24,10 +42,11 @@ if(isset($POST['email']) || isset($_POST['senha'])) {
         session_start();
       }
 
-      $_SESSION['id'] = $usuario['id'];
+      $_SESSION['cpf'] = $usuario['cpf'];
       $_SESSION['nome'] = $usuario['nome'];
 
-      header("Location: painel.php");
+      echo"<script language='javascript' type='text/javascript'>alert('Você está logado');window.location.href='login.php';</script>";
+      die();
 
     } else {
       echo "Falha ao logar, e-mail ou senha incorretos";
@@ -35,7 +54,7 @@ if(isset($POST['email']) || isset($_POST['senha'])) {
 
 
   }
-}
+} */
 
 ?>
 
@@ -70,7 +89,7 @@ if(isset($POST['email']) || isset($_POST['senha'])) {
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link text-white" href="#">Restaurantes</a>
+          <a class="nav-link text-white" href="restaurantes.php">Restaurantes</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

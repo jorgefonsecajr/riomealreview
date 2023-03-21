@@ -28,7 +28,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Restaurantes</a>
+                        <a class="nav-link text-white" href="restaurantes.php">Restaurantes</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -46,7 +46,7 @@
     </nav>
 
     <div class="container w-50 formulario">
-        <form class="row g-3 mt-5" method="POST" action="cadastro.php">
+        <form class="row g-3 mt-5" method="POST" action="cadastre_se.php">
             <div class="form-group ">
                 <label for="inputNome">Nome:</label>
                 <input type="text" class="form-control" id="inputNome" placeholder="Digite aqui seu nome" name="nome">
@@ -62,7 +62,7 @@
 
             <div class="col-md-6 ">
                 <label for="inputCpf" class="form-label">CPF:</label>
-                <input type="number" class="form-control" id="inputCpf" placeholder="Apenas números" name="cpf">
+                <input type="text" class="form-control" id="inputCpf" placeholder="Apenas números" name="cpf">
             </div>
             <div class="col-md-6 ">
                 <label for="inputDtn" class="form-label">Data de Nascimento:</label>

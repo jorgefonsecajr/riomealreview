@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require 'conexoes.php';
+include('./bd/conexao.php');
 
 
 $email = $_POST['email'];
@@ -12,21 +12,19 @@ $nascimento = $_POST['dataNascimento'];
 $hashSenha = hash('sha512', $senha_cadastro);
 
 
-$conexao = conectarBD();
-if ($conexao->connect_errno) {
-    header('location: paginaErrorBD.html');
-}
+$mysqli = new mysqli($hostname, $usuario, $senha, $database);
+if ($mysqli->connect_errno) {
+    echo "Erro ao conectar ao BD";
+} 
 
 $sql = "insert into clientes (email, senha, cpf, nome, nascimento) 
 values ('$email', '$hashSenha', $cpf, '$nome', '$nascimento')";
 
-$resultadoQuery = $conexao->query($sql);
-desconectarBD($conexao);
-
+$resultadoQuery = $mysqli->query($sql);
 
 if ($resultadoQuery) {
-    header('location: projeto_senac.html');
+    header('location: restaurantes.php');
 } else {
-    $msg = "Falha ao realizar o cadastro. Tente novamente!";
+    echo "Falha ao realizar o cadastro. Tente novamente!";
 }
 

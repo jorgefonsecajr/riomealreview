@@ -15,7 +15,8 @@ if(!isset($_SESSION)){
     <title>Document</title>
 </head>
 <body>
-    Você está logado! <br>
-    Bem vindo, <?php echo $_SESSION['nome']; ?>
+    <script>
+        alert("Olá <?php $nome ?>. Você esta logado.")
+    </script>
 </body>
 </html>

@@ -45,14 +45,11 @@
   </div>
 </nav>
 
-<!-- Conteúdo -->
-  <div class="container w-50">
-    <h3 class="text-center mt-3 text-white">Avalie os Restaurantes que você visitou</h3>
-    <img class="img-fluid" src="./images/restarante.jpg" alt="restaurante">
-    <a class="btn btn-primary btn-lg d-md-flex justify-content-center mt-3" href="restaurantes.php">Avaliar Restaurantes</a>
-  </div>
+
+
+
+
+
+
 </body>
-
-
-
 </html>
