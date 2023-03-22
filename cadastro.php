@@ -16,34 +16,41 @@
 </head>
 
 <body class="telaFundo">
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg static-top fundo">
-        <div class="container">
-            <a class="navbar-brand text-white" href="index.php">
-                <img src="./images/big-logo.png" alt="..." height="36"> Rio Meal Review
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="restaurantes.php">Restaurantes</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Área de Usuário
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="login.php">Login</a></li>
-                            <li><a class="dropdown-item" href="cadastro.php">Registro</a></li>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg static-top fundo">
+  <div class="container">
+    <a class="navbar-brand text-white" href="index.php">
+      <img src="images/big-logo.png" alt="..." height="36"> Rio Meal Review
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto">
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Restaurantes
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="cadastroRestaurante.php">Crie sua avaliação</a></li>
+            <li><a class="dropdown-item" href="listaRestaurante.php">Avaliações</a></li>
 
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Área de Usuário
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="login.php">Login</a></li>
+            <li><a class="dropdown-item" href="cadastro.php">Registro</a></li>
+
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
     <div class="container w-50 formulario">
         <form class="row g-3 mt-5" method="POST" action="cadastre_se.php">

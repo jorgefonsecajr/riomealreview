@@ -1,64 +1,3 @@
-<?php 
-include('./bd/conexao.php');
-
-if(isset($POST['email']) || isset($_POST['senha'])) {
-  if(strlen($_POST['email']) == 0){
-    echo "Preencha seu e-mail";
-  } else if(strlen($_POST['senha'] == 0)){
-    echo "Preencha sua senha";
-  } 
-
-    $email = $mysqli->real_escape_string($_POST['email']);
-    $senha = $mysqli->real_escape_string($_POST['senha']);
-    $hashSenhaInfo = hash('sha512', $senha);
-    $sql_code = "SELECT * FROM clientes WHERE email = '$email'";
-    $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL: ". $mysqli->error);
-
-    
-    if($sql_query) {
-      $registro = $sql_query->fetch_all(MYSQLI_ASSOC);
-      //echo var_dump($registro);
-      if ($registro[0]['senha'] == $hashSenhaInfo){
-
-  
-        echo"<script language='javascript' type='text/javascript'>alert('Você está logado');window.location.href='login.php';</script>";
-        die();
-
-      } else {
-        echo "Email ou senha incorreta";
-      }
-
-    }
-  
-  }
-
-/*     $quantidade = $sql_query->num_rows;
-
-    if($quantidade == 1) {
-
-      $usuario = $sql_query->fetch_assoc();
-
-      if(!isset($_SESSION)){
-        session_start();
-      }
-
-      $_SESSION['cpf'] = $usuario['cpf'];
-      $_SESSION['nome'] = $usuario['nome'];
-
-      echo"<script language='javascript' type='text/javascript'>alert('Você está logado');window.location.href='login.php';</script>";
-      die();
-
-    } else {
-      echo "Falha ao logar, e-mail ou senha incorretos";
-    }
-
-
-  }
-} */
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="PT-BR">
 
@@ -112,25 +51,33 @@ if(isset($POST['email']) || isset($_POST['senha'])) {
     </div>
   </div>
 </nav>
-<div class="container w-25 mt-5">
-    <h2 class="text-center text-white">Login</h2>
-    <form action="" method="POST">
-        <div class="row">
-            <div class="mt-3">
-                <input type="text" name="email" class="form-control" placeholder="E-mail" value="">
+
+
+<div class="container w-50 formulario">
+        <h2 class="text-white text-center mt-5">Faça sua Avaliação</h2>
+        <form class="form-group mt-2" method="POST" action="cadastre_se.php">
+            <div class="form-group mt-2">
+                <label for="inputNome">Nome do Restaurante:</label>
+                <input type="text" class="form-control" id="inputNome" placeholder="Digite aqui o nome do restaurante que deseja avaliar" name="nomeRestaurante">
             </div>
-            <div class="form-group mt-3">
-                <input type="password" class="form-control" name="senha" id="senha" placeholder="Senha">
+            <div class="form-group mt-2">
+                <label for="inputEndereco" class="form-label">Endereço:</label>
+                <input type="text" class="form-control" placeholder="Digite o endereço do restaurante" id="inputEndereco" name="enderecoRestaurante">
             </div>
-            <div class="btn btn-block btn-sm btn-success mt-3">
-                <input type="submit" value="Logar" class="btn text-white ">
+            <div class="form-group">
+                <label for="inputTextArea" class="form-label mt-2">Escreva sua Avaliação</label> <br>
+                <textarea style="resize: none;" name="avaliacao" id="inputTextArea" cols="81" rows="10"></textarea>
             </div>
 
-            <a href="" class="justify-content-end text-white mt-3">Esqueceu a senha</a>
-            
-        </div>
-    </form>
-</div>
+           
+            <div class="btn btn-sm btn-success btn-block mt-4">
+                <input type="submit" value="Cadastrar" class="btn text-white">
+            </div>
+
+
+
+
+        </form>
 
 </body>
 </html>
